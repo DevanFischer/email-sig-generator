@@ -10,7 +10,7 @@ Used to generate minified html email signatures from a provided `employees.csv` 
 4. Run the following docker command:
 
 ```shell
-docker run --rm -v $(pwd):/var/input -v $(pwd)/output:/var/output mazama/email-sig-generator
+docker run --rm -v $(pwd):/var/input -v $(pwd)/output:/var/output devanfischer/email-sig-generator
 ```
 
 **Example:**
