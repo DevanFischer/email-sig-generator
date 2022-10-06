@@ -1,7 +1,6 @@
 import csv
 
 EMPLOYEE_FILE = "input/employees.csv"
-TEMPLATE_FILE = "TEMPLATE.min.html"
 OUTPUT_PATH = "output"
 employees = []
 
@@ -9,6 +8,11 @@ employees = []
 def main():
     employee_array = read_csv_to_dictArray(EMPLOYEE_FILE)
     for employee in employee_array:
+        if employee["EMPLOYEE_PHONE_MOBILE"] != "":
+            TEMPLATE_FILE = "TEMPLATE-MOBILE.min.html"
+        else:
+            TEMPLATE_FILE = "TEMPLATE.min.html"
+
         template_string = read_template(TEMPLATE_FILE)
         formatted_string = replace_employee_data(employee, template_string)
         out_file_name = format_file_name(employee)
